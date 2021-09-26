@@ -1,7 +1,7 @@
 .app {
   text-align: center;
   background-color: #000000;
-  color: #000000;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,6 +14,7 @@
   animation-name: fadein;
   animation-duration: 12s;
   animation-fill-mode: forwards;
+  opacity: 0;
 }
 
 .text-2 {
@@ -37,19 +38,33 @@
 }
 
 .future {
-  width: 50%;
-  height: 30%;
+  width: 0%;
+  animation-name: zoom;
+  animation-fill-mode: forwards;
+  animation-duration: 12s;
+  padding-top: 3.2rem;
 }
 
 @keyframes fadein {
   0% {
-    color: #000000;
+    opacity: 0;
 
   }
   50% {
-    color: #ffffff;
+    opacity: 100;
   }
   100% {
-    color: #000000;
+    opacity: 0;
+  }
+}
+
+@keyframes zoom {
+  from {
+    opacity: 0;
+  }
+  to {
+    transform: scale(2.1);
+    width: 20%;
+    opacity: 100;
   }
 }
